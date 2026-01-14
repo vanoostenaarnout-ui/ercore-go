@@ -1,0 +1,40 @@
+{
+  "outputDir": "out",
+  "baseName": "clusters",
+  "outputType": "both",
+  "writeSummary": true,
+
+  "mode": "er",
+  "threshold": 0.85,
+
+  "blockOn": [],
+  "matchOn": [],
+
+  "engine": {
+    "runStrategy": {
+      "batchSize": 100000,
+      "maxRecords": 0,
+      "maxNullOrEmptyRatio": 0.95,
+      "minDistinctRatioForKey": 0.05,
+      "deprioritiseRandomNumeric": true,
+      "allowAutoKeyInference": true,
+      "trimAndClean": {
+        "trimWhitespace": true,
+        "collapseWhitespace": true,
+        "toLower": true,
+        "stripQuotes": true
+      }
+    },
+
+    "columnOptions": {
+      "email": {
+        "prefer_for_blocking": true,
+        "weight": 1.5,
+        "match_strategy": "email_exact"
+      }
+    },
+
+    "blockingSpecs": [],
+    "matchKeySpecs": []
+  }
+}
